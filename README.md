@@ -1,17 +1,14 @@
-# Multilingual Speech-to-Speech Streaming with Video Integration
+# MultiStream: Speech-to-Speech Streaming Platform
 ## **Description**:
-
 This repository implements a web application that enables real-time, multilingual communication through video content. It leverages cutting-edge Natural Language Processing (NLP) and Artificial Intelligence (AI) techniques to seamlessly process, translate, and integrate speech across different languages within video files.
 
 ### **How it Works:**
-
 1. **Upload an MP4 video and choose a target language.**
 2. **The application extracts audio, converts it to text, translates it, and generates synthetic speech in your chosen language.**
 3. **Audio speed is adjusted to match the video, and the translated audio is seamlessly integrated into a new video.**
 4. **Download your translated video!**
 
 ### **Technology Stack:**
-
 *   **Backend Framework:** Flask (Python web framework)
 *   **Speech-to-Text:** Whisper (Automatic Speech Recognition model)
 *   **Multilingual Translation:** Google Generative AI (AI for text translation)
