@@ -47,6 +47,22 @@ This repository implements a web application that enables real-time, multilingua
 
     This will start the web application, typically accessible at `http://127.0.0.1:5000/` in your web browser.
 ---
+### **Usage/Screenshots:**
+
+#### 1.  Choose a file & upload your video:
+![image](https://github.com/user-attachments/assets/b7ac0cbb-96af-4792-b7ce-7e8026890584)
+
+
+#### 2.  Select your target language:
+![image](https://github.com/user-attachments/assets/52fc7da5-1b1b-4428-b468-df4cb95ea1be)
+
+#### 3.  Processing : The application processes the video, does translation, and video integration.
+![image](https://github.com/user-attachments/assets/cdebca49-71ae-4dd5-ac48-9d295b47bfe1)
+
+#### 4.  View the translated video: A download link will be provided upon completion.
+![image](https://github.com/user-attachments/assets/d15d8f5c-68aa-4c98-8ad3-95b33c70fd7c)
+
+---
 ## **Future Improvements:**
 
 *   **Real-Time Processing:** Implement real-time speech-to-speech streaming.
