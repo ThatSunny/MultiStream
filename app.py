@@ -148,3 +148,6 @@ def serve_output(filename):
 # Main program entry point
 if __name__ == "__main__":
     app.run(debug=True)
+
+# For Vercel: expose the Flask app as `handler`
+handler = app
