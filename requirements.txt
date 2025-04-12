@@ -1,0 +1,8 @@
+flask
+werkzeug
+python-dotenv
+langchain-google-genai
+transformers
+moviepy
+gTTS
+pydub
