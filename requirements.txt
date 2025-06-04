@@ -6,3 +6,4 @@ transformers
 moviepy
 gTTS
 pydub
+openai
