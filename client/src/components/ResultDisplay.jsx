@@ -24,7 +24,7 @@ const ResultDisplay = ({ result }) => {
     <div className="result" style={{ display: "block" }}>
       <h2>Processing Complete!</h2>
       <p>
-        Your {fileExtension === "mp4" ? "video" : "audio"} has been processed
+        Your file has been processed
         successfully.
       </p>
       {fileExtension === "mp4" ? (
