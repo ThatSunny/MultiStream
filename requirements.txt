@@ -1,9 +1,8 @@
 flask
+flask-cors
 werkzeug
 python-dotenv
-langchain-google-genai
-transformers
-moviepy
+moviepy==1.0.3
 gTTS
 pydub
-openai
+groq

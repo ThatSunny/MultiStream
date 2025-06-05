@@ -27,7 +27,7 @@ const UploadForm = ({ setResult }) => {
       const data = await response.json();
 
       if (data.success) {
-        setResult({ videoUrl: data.video_url });
+        setResult({ video_url: data.video_url });  // Changed from videoUrl to video_url
       } else {
         setResult({ error: data.error || "Failed to process file." });
       }
@@ -68,4 +68,4 @@ const UploadForm = ({ setResult }) => {
   );
 };
 
-export default UploadForm
+export default UploadForm;
