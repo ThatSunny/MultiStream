@@ -16,7 +16,7 @@ import time
 load_dotenv(dotenv_path='config/.env')
 
 # Flask app initialization
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../client/build', static_url_path='/')
 CORS(app) 
 app.config['UPLOAD_FOLDER'] = 'data/uploads/'
 OUTPUT_FOLDER = 'data/output/'  # Output folder for translated audio and video
@@ -352,6 +352,17 @@ def cleanup_old_files():
                                 print(f"Failed to cleanup file {file_path}: {e}")
     except Exception as e:
         print(f"Error during cleanup: {e}")
+
+@app.route('/')
+def serve_index():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/<path:path>')
+def serve_static(path):
+    if os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
 
 # Route to handle file upload and processing
 @app.route('/', methods=['GET', 'POST'])
