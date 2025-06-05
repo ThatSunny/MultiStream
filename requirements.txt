@@ -6,3 +6,4 @@ moviepy==1.0.3
 gTTS
 pydub
 groq
+gunicorn
