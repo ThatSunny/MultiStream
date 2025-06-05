@@ -15,24 +15,8 @@ import time
 # Load environment variables
 load_dotenv(dotenv_path='config/.env')
 
-# Create /tmp folders
-UPLOAD_FOLDER = '/tmp/uploads'
-TEMP_FOLDER = '/tmp/temp'
-OUTPUT_FOLDER = '/tmp/output'
-
-# Create directories if they don't exist
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-os.makedirs(TEMP_FOLDER, exist_ok=True)
-os.makedirs(OUTPUT_FOLDER, exist_ok=True)
-
-app = Flask(__name__, static_folder='static')  # Or wherever your frontend build is
-
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50 MB
- 
-
 # Flask app initialization
-app = Flask(__name__, static_folder='../client/build', static_url_path='/')
+app = Flask(__name__)
 CORS(app) 
 app.config['UPLOAD_FOLDER'] = 'data/uploads/'
 OUTPUT_FOLDER = 'data/output/'  # Output folder for translated audio and video
@@ -369,19 +353,8 @@ def cleanup_old_files():
     except Exception as e:
         print(f"Error during cleanup: {e}")
 
-@app.route('/')
-def serve_index():
-    return send_from_directory(app.static_folder, 'index.html')
-
-@app.route('/<path:path>')
-def serve_static(path):
-    if os.path.exists(os.path.join(app.static_folder, path)):
-        return send_from_directory(app.static_folder, path)
-    else:
-        return send_from_directory(app.static_folder, 'index.html')
-
 # Route to handle file upload and processing
-@app.route('/upload', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         file = request.files.get('file')
@@ -565,14 +538,6 @@ def debug_files():
         })
     except Exception as e:
         return jsonify({'error': str(e)})
-    
-@app.route('/debug/tmp')
-def debug_tmp():
-    files = os.listdir(OUTPUT_FOLDER)
-    return jsonify({
-        'output_folder': OUTPUT_FOLDER,
-        'files': files
-    })
 
 # Main program entry point
 if __name__ == "__main__":
