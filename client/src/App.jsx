@@ -10,7 +10,7 @@ const App = () => {
     <div className="container">
       <header>
         <h1>Multi-Lingual Stream</h1>
-        <p>A Speech-to-Speech Streaming Converter in 12 Languages</p>
+        <p>A Speech-to-Speech Streaming Converter</p>
       </header>
 
       <UploadForm setResult={setResult} />

@@ -51,7 +51,7 @@ const UploadForm = ({ setResult }) => {
         </div>
 
         <div className="form-group">
-          <label>Enter Target Language (e.g., hi, es, fr):</label>
+          <label>Enter Target Language (e.g. Hindi, French, Spanish):</label>
           <input
             type="text"
             value={targetLanguage}
